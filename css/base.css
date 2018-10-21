@@ -52,3 +52,26 @@ input {
   outline: none;
   border: none;
 }
+img {
+  display: block;
+}
+/*公共头部样式*/
+.my-header {
+  background-color: #80B3FF;
+}
+.my-header > h1 {
+  color: #fff;
+}
+.my-header > a {
+  color: #fff;
+}
+/*公共底部样式*/
+.my-footer {
+  background-color: #80B3FF;
+}
+.my-footer > .mui-tab-item {
+  color: #fff;
+}
+.my-footer > .mui-tab-item.mui-active {
+  color: cyan;
+}

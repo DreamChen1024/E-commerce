@@ -1,0 +1,98 @@
+/*首页样式*/
+.my-banner {
+  margin-top: 44px;
+}
+.my-nav {
+  padding: 10px;
+  overflow: hidden;
+}
+.my-nav > ul {
+  width: 100%;
+}
+.my-nav > ul > li {
+  width: 33.33%;
+  float: left;
+}
+.my-nav > ul > li > a > img {
+  width: 100%;
+  display: block;
+}
+.my-brand > img {
+  width: 100%;
+  display: block;
+  padding: 0 10px 15px 10px;
+}
+.my-brand > ul {
+  overflow: hidden;
+  padding: 0 10px 10px 10px;
+}
+.my-brand > ul > li {
+  float: left;
+  width: 25%;
+}
+.my-brand > ul > li > a:nth-of-type(-n+4) {
+  display: block;
+  margin-bottom: 5px;
+}
+.my-brand > ul > li img {
+  width: 100%;
+  display: block;
+}
+.my-product {
+  padding: 0 10px;
+}
+.my-product > img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.my-product > ul {
+  width: 100%;
+  overflow: hidden;
+}
+.my-product > ul > li {
+  padding: 5px;
+  width: 50%;
+  float: left;
+}
+.my-product > ul > li > a {
+  display: block;
+  box-shadow: 0 0px 5px #ccc;
+  padding: 5px;
+}
+.my-product > ul > li > a > img {
+  width: 100%;
+}
+.my-product > ul > li > a > .name {
+  display: block;
+  color: #8f8f94;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  height: 38px;
+  padding: 5px;
+  overflow: hidden;
+}
+.my-product > ul > li > a > p {
+  text-align: center;
+  padding: 6px 0 10px 0;
+}
+.my-product > ul > li > a > p > span:nth-of-type(1) {
+  color: #f20;
+  padding-right: 2px;
+}
+.my-product > ul > li > a > p > span:nth-of-type(2) {
+  text-decoration: line-through;
+  padding-left: 2px;
+}
+.my-product > ul > li > a > button {
+  display: block;
+  width: 80px;
+  height: 30px;
+  line-height: 19px;
+  text-align: center;
+  background: #006699;
+  color: #FFF;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 0 auto 5px auto;
+}

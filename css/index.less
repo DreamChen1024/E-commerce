@@ -1,0 +1,109 @@
+/*首页样式*/
+// 轮播图样式
+.my-banner {
+    margin-top: 44px;
+}
+
+//导航栏样式
+.my-nav {
+    padding: 10px;
+    overflow: hidden;
+    > ul {
+        width: 100%;
+        > li {
+            width: 33.33%;
+            float: left;
+            > a {
+                > img {
+                    width: 100%;    
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//品牌专区
+.my-brand {
+    > img {
+        width: 100%;
+        display: block;
+        padding: 0 10px 15px 10px;
+    }
+    > ul {
+        overflow: hidden;
+        padding: 0 10px 10px 10px;
+        > li {
+            float: left;
+            width: 25%;
+            > a:nth-of-type(-n+4) {
+                display: block;
+                margin-bottom: 5px;
+            }
+            img {
+                width: 100%;
+                display: block;
+            }
+        } 
+    }
+}
+
+//运动生活专区
+.my-product {
+    padding: 0 10px;
+    > img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    > ul {
+        width: 100%;
+        overflow: hidden;
+        > li {
+            padding: 5px;
+            width: 50%;
+            float: left;
+            > a {
+                display: block;
+                box-shadow: 0 0px 5px #ccc;
+                padding: 5px;
+                > img {
+                    width: 100%;
+                }
+                > .name {
+                    display: block;
+                    color: #8f8f94;
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 18px;
+                    height: 38px;
+                    padding: 5px;
+                    overflow: hidden;
+                }
+                > p {
+                    text-align: center;
+                    padding: 6px 0 10px 0;
+                    > span:nth-of-type(1) {
+                        color: #f20;
+                        padding-right: 2px;
+                    }
+                    > span:nth-of-type(2) {
+                        text-decoration: line-through;
+                        padding-left: 2px;
+                    }
+                }
+                > button {
+                    display: block;
+                    width: 80px;
+                    height: 30px;
+                    line-height: 19px;
+                    text-align: center;
+                    background: #006699;
+                    color: #FFF;
+                    font-size: 14px;
+                    border-radius: 4px;
+                    margin: 0 auto 5px auto;
+                }
+            }
+        }
+    } 
+}
