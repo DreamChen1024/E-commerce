@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入MUI插件样式 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入分类页样式 -->
+    <link rel="stylesheet" href="./css/category.css">
+    <!-- 引入zepto文件 -->
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <!-- 引入分类页JS文件 -->
+    <script src="./js/category.js"></script>
+    <!-- 引入模板引擎文件 -->
+    <script src="./assets/template/template-web.js"></script>
+    <!-- 引入MUI的JS文件 -->
+    <script src="./assets/mui/js/mui.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">梦想购</h1>
+        <a href="" class="mui-icon mui-icon-search mui-pull-right"></a>
+    </header>
+    <!-- 底部 -->
+    <nav class="mui-bar mui-bar-tab my-footer">
+        <a class="mui-tab-item" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item mui-active" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <!-- 分类页面内容 -->
+    <div class="my-content">
+        <div class="my-categoryLeft">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="links"></div>
+                </div>
+            </div>
+        </div>
+        <div class="my-categoryRight">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="lists">
+                        <!-- <li>
+                            <a href="javascript:;">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 左侧栏模板引擎 -->
+    <script type="text/template" id="category-first">
+    {{each result}}
+        <a href="javascript:;" data-id="{{$value.id}}">{{$value.categoryName}}</a>
+    {{ /each }}
+</script>
+    <!-- 右侧栏模板引擎 -->
+    <script type="text/template" id="category-second">
+    {{ each rows}}
+        <li>
+            <a href="javascript:;">
+                <img src="{{$value.brandLogo}}" alt="">
+                <p>{{$value.brandName}}</p>
+            </a>
+        </li>
+    {{ /each }}
+    {{ if(!rows.length)}}
+        <div>暂无数据</div>
+    {{/if}}
+</script>
+</body>
+
+</html>
