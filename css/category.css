@@ -53,3 +53,7 @@
 .my-content > .my-categoryRight .lists > li > a > p {
   text-align: center;
 }
+.my-content > .my-categoryRight .lists .noresult {
+  padding: 10px;
+  color: #f20;
+}
