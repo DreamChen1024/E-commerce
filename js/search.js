@@ -22,7 +22,7 @@ $(function () {
 
         } else {
             //用户没有输入内容时
-            mui.toast('请输入要搜索的商品关键字',{ duration:'short', type:'div' })
+            mui.toast('请输入要搜索的商品关键字',{ duration:2000, type:'div' })
         }
     });
 
@@ -40,8 +40,8 @@ $(function () {
         keyArr = JSON.parse(localStorage.getItem('keyArr'));
         var html = template('historyTpl', {result: keyArr});
         $('.history-box').html(html);
-        console.log(keyArr);
-        console.log(html);
+        // console.log(keyArr);
+        // console.log(html);
     }
 
     // 实现清空历史记录
