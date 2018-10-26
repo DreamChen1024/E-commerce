@@ -1,0 +1,42 @@
+.mui-content .container {
+  padding: 10px;
+}
+.mui-content .container > .search {
+  width: 100%;
+  position: relative;
+  height: 30px;
+  border: 1px solid #80B3FF;
+  margin-bottom: 15px;
+}
+.mui-content .container > .search > input:first-of-type {
+  width: 100%;
+  height: 30px;
+  color: #474747;
+  border: none;
+  padding-right: 70px;
+  font-size: 14px;
+  background: none;
+}
+.mui-content .container > .search > input:last-of-type {
+  width: 60px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  border: none;
+  background: #80B3FF;
+  color: #fff;
+  border-radius: 0;
+}
+.mui-content .container > .history-top {
+  color: #8f8f94;
+  margin-bottom: 15px;
+}
+.mui-content .container > .history-top > span:last-of-type {
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 3px;
+}
+.mui-content .container .history-box {
+  background-color: #efeff4;
+}
