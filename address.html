@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	 <!-- 引入MUI插件样式 -->
+     <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
+     <!-- 引入公共样式 -->
+     <link rel="stylesheet" href="./css/base.css">
+     <!-- 引入fontAwesome字体 -->
+     <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css">
+     <!-- 引入zepto文件 -->
+     <script src="./assets/zepto/zepto.min.js"></script>
+     <!-- 引入MUI插件js -->
+     <script src="./assets/mui/js/mui.min.js"></script>
+     <!-- 引入模板引擎 -->
+     <script src="./assets/template/template-web.js"></script>
+     <!-- 引入本页面JS文件 -->
+     <script src="./js/address.js"></script>
+	<style>
+		.mui-media-body {
+			font-size: 14px;
+		}
+
+		.addAddress {
+			display: block;
+			width: 100%;
+			padding: 10px 0;
+			text-align: center;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav my-header">
+		<h1 class="mui-title">收获地址列表</h1>
+		<a class="mui-icon mui-icon-search mui-pull-right"></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab my-footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+		<a href="addAddress.html?isEdit=0" class="addAddress">添加收货地址</a>
+		<ul class="mui-table-view" id="address-box">
+		    
+		</ul>
+	</div>
+</body>
+</html>
