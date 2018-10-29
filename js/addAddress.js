@@ -14,30 +14,86 @@ $(function() {
         })
     },false);
 
+    // 默认为添加收货地址
+    var flag = true;
+    // 看地址栏中是否有ID参数 如果有就是修改地址 否则就是添加地址
+	if(getParamsByUrl(location.href,'id')){
+        // console.log(123);
+		// 修改收获地址
+		flag = false;
+
+		$.ajax({
+			url:'/address/queryAddress',
+			method:'get',
+			success:function(result){
+
+				for(var i=0;i<result.length;i++){
+
+					if(result[i].id == getParamsByUrl(location.href,'id')){
+
+						$('[name="address"]').val(result[i].address);
+						$('[name="addressDetail"]').val(result[i].addressDetail);
+						$('[name="recipients"]').val(result[i].recipients);
+						$('[name="postcode"]').val(result[i].postCode);
+
+					}
+
+				}
+
+			}
+		});
+
+    }
+    
     //添加收货地址
     $('#addAddress').on('tap','span',function() {
-        //获取输入框内容
-        var recipients = $('[name = "recipients"]').val().trim();
-        var postcode = $('[name = "postcode"]').val().trim();
-        var address = $('[name = "address"]').val().trim();
-        var addressDetail = $('[name = "addressDetail"]').val().trim();
 
+        var This = $(this);
+
+        var url = '/address/addAddress';
+
+        var data = {
+        //获取输入框内容
+            recipients : $('[name = "recipients"]').val().trim(),
+            postcode : $('[name = "postcode"]').val().trim(),
+            address : $('[name = "address"]').val().trim(),
+            addressDetail : $('[name = "addressDetail"]').val().trim()
+        }
+
+        if (!data.address) {
+            mui.toast("请选择地址");
+            return;
+        }
+        if (!data.addressDetail) {
+            mui.toast("请输入详细地址");
+            return;
+        }
+        if (!data.recipients) {
+            mui.toast("请输入收货人");
+            return;
+        }
+        if (!data.postcode) {
+            mui.toast("请输入邮政编码");
+            return;
+        }
+        if (!flag) {
+            data.id = getParamsByUrl(location.href,"id");
+            url = "/address/updateAddress";
+        }
         $.ajax({
-            url:"/address/addAddress",
+            url:url,
             type:"post",
-            data: {
-                address: address,
-                addressDetail: addressDetail,
-                recipients: recipients,
-                postcode: postcode
+            data: data,
+            beforeSend:function() {
+                This.html('正在' + (flag ? '添加' : '修改') + '收货地址');
             },
             success:function(res) {
-                
-                location.href = "address.html";
-                console.log(res);
-                var html = template("addressTpl",res);
-                console.log(html);
-                $('#address-box').html(html);
+                if (res.success) {
+                    location.href = "address.html";
+                }else {
+                    mui.toast(res.message)
+
+                }
             }
         })
     })
